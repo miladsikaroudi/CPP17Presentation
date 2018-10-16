@@ -1,0 +1,17 @@
+#include<map>
+#include<string>
+#include<utility>
+
+struct S
+{
+  int i=4;
+  int j=5;
+};
+int main()
+{
+  /*std::map<std::string, int> locals;
+  int &i=add_local(locals, "my_var");*/
+  auto [i ,j]=S();
+  return j;
+  
+}

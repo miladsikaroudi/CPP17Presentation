@@ -1,0 +1,21 @@
+#include<map>
+#include<string>
+#include<utility>
+
+int &add_local(std::map<std::string,int> vars,
+               const std::string &new_var_name)
+{
+  if(auto [itr, success] = vars.insert(std::make_pair(new_var_name, 0));success==false)
+  {
+    throw std::runtime_error("variable already exists");
+  }
+  else{
+    return itr->second;
+  }
+}
+int main()
+{
+  std::map<std::string, int> locals;
+  int &i=add_local(locals, "my_var");
+  
+}

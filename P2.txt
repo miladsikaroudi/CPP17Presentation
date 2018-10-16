@@ -1,0 +1,21 @@
+// Type your code here, or load an example.
+#include<type_traits>
+#include<iostream>
+
+template<typename T>
+auto print_type_info(const T&t)
+{
+  if (std::is_integral<T>::value){
+    std::cout<<"is integral\n";
+    return t+1;
+  }else{
+      std::cout<<"is not integral\n";
+    return t+0.1;
+    }
+}
+
+int main()
+{
+  print_type_info(5);
+  print_type_info(2.3);
+}
